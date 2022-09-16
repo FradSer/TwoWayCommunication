@@ -151,6 +151,7 @@
 				CB2FC56B28D453000056BC5F /* Sources */,
 				CB2FC56C28D453000056BC5F /* Frameworks */,
 				CB2FC56D28D453000056BC5F /* Resources */,
+				CB73BDD428D458F60000CBD7 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -168,6 +169,7 @@
 				CB2FC57128D453000056BC5F /* Sources */,
 				CB2FC57228D453000056BC5F /* Frameworks */,
 				CB2FC57328D453000056BC5F /* Resources */,
+				CB73BDD528D459100000CBD7 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -293,6 +295,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB73BDD428D458F60000CBD7 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [[ \"$(uname -m)\" = x86_64* ]]; then\n  prefie=\"/usr/local/bin/\"\nelse\n  prefie=\"/opt/homebrew/bin/\"    \nfi\n\nif which $prefie/swiftformat >/dev/null; then\n  $prefie/swiftformat --swiftversion 5.5 --config \"./.swiftformat\" .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		CB73BDD528D459100000CBD7 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [[ \"$(uname -m)\" = x86_64* ]]; then\n  prefie=\"/usr/local/bin/\"\nelse\n  prefie=\"/opt/homebrew/bin/\"    \nfi\n\nif which $prefie/swiftformat >/dev/null; then\n  $prefie/swiftformat --swiftversion 5.5 --config \"./.swiftformat\" .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB2FC56B28D453000056BC5F /* Sources */ = {
