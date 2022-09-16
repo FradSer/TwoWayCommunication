@@ -68,6 +68,30 @@ struct WebView: WebViewRepresentable {
     }
 
     func updateUIView(_ view: WKWebView, context _: Context) {
+      let contentController = ContentController(view)
+      let userScript = WKUserScript(
+        source: """
+          var _selector = document.querySelector('input[name=myCheckbox]');
+              _selector.addEventListener('change', function(event) {
+                  var message = (_selector.checked) ? "Toggle Switch is on" : "Toggle Switch is off";
+                  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+                      window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+                          "message": message
+                      });
+                  }
+              });
+        """,
+        injectionTime: .atDocumentEnd,
+        forMainFrameOnly: false,
+        in: .defaultClient
+      )
+
+      view.configuration.userContentController.add(
+        contentController,
+        contentWorld: .defaultClient,
+        name: "toggleMessageHandler"
+      )
+      view.configuration.userContentController.addUserScript(userScript)
       loadFileURL(file, view: view)
     }
 
@@ -85,6 +109,41 @@ struct WebView: WebViewRepresentable {
       loadFileURL(file, view: view)
     }
   #endif
+
+  class ContentController: NSObject, WKScriptMessageHandler {
+    // MARK: Lifecycle
+
+    init(_ parent: WKWebView?) {
+      self.parent = parent
+    }
+
+    // MARK: Internal
+
+    var parent: WKWebView?
+
+    func userContentController(
+      _: WKUserContentController,
+      didReceive message: WKScriptMessage
+    ) {
+      guard let dict = message.body as? [String: AnyObject] else {
+        return
+      }
+
+      guard let message = dict["message"] else {
+        return
+      }
+
+      let script = "document.getElementById('value').innerText = \"\(message)\""
+
+      parent?.evaluateJavaScript(script) { result, error in
+        if let result = result {
+          print("Label is updated with message: \(result)")
+        } else if let error = error {
+          print("An error occurred: \(error)")
+        }
+      }
+    }
+  }
 
   // MARK: Private
 
