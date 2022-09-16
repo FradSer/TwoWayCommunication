@@ -17,6 +17,10 @@
 		CB2FC59328D453000056BC5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FC56928D452FE0056BC5F /* ContentView.swift */; };
 		CB2FC59428D453000056BC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2FC56A28D453000056BC5F /* Assets.xcassets */; };
 		CB2FC59528D453000056BC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2FC56A28D453000056BC5F /* Assets.xcassets */; };
+		CB73BDD728D45B000000CBD7 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = CB73BDD628D45B000000CBD7 /* index.html */; };
+		CB73BDD828D45B000000CBD7 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = CB73BDD628D45B000000CBD7 /* index.html */; };
+		CB73BDDA28D45BB40000CBD7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73BDD928D45BB40000CBD7 /* WebView.swift */; };
+		CB73BDDB28D45BB40000CBD7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73BDD928D45BB40000CBD7 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		CB2FC58828D453000056BC5F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2FC58C28D453000056BC5F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		CB2FC58E28D453000056BC5F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		CB73BDD628D45B000000CBD7 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		CB73BDD928D45BB40000CBD7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 			children = (
 				CB2FC56828D452FE0056BC5F /* TwoWayCommunicationApp.swift */,
 				CB2FC56928D452FE0056BC5F /* ContentView.swift */,
+				CB73BDD928D45BB40000CBD7 /* WebView.swift */,
+				CB73BDD628D45B000000CBD7 /* index.html */,
 				CB2FC56A28D453000056BC5F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -269,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2FC59428D453000056BC5F /* Assets.xcassets in Resources */,
+				CB73BDD728D45B000000CBD7 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2FC59528D453000056BC5F /* Assets.xcassets in Resources */,
+				CB73BDD828D45B000000CBD7 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB73BDDA28D45BB40000CBD7 /* WebView.swift in Sources */,
 				CB2FC59228D453000056BC5F /* ContentView.swift in Sources */,
 				CB2FC59028D453000056BC5F /* TwoWayCommunicationApp.swift in Sources */,
 			);
@@ -349,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB73BDDB28D45BB40000CBD7 /* WebView.swift in Sources */,
 				CB2FC59328D453000056BC5F /* ContentView.swift in Sources */,
 				CB2FC59128D453000056BC5F /* TwoWayCommunicationApp.swift in Sources */,
 			);
