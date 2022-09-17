@@ -15,6 +15,26 @@
       -webkit-touch-callout: none;
       -webkit-user-select: none; /* Disable selection/copy in WKWebView */
       }
+      
+      #controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 20px;
+        border: 2px solid gray;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: [sliders] auto 20px [labels] auto;
+      }
+
+      #controls input {
+        grid-column: sliders;
+      }
+
+      #controls label {
+        grid-column: labels;
+        color: white;
+      }
     </style>
     <script>
       // By Roni Kaufman
@@ -27,6 +47,7 @@
       let maxNoise = 232;
       let lapse = 0;    // mouse timer
       let noiseProg = (x) => (x);
+      let slider;
       
       function setup() {
         createCanvas(windowWidth, windowHeight);
@@ -37,19 +58,19 @@
         step = 0.01;
         noStroke();
         drawingContext.shadowBlur = 200;
+        slider = select('#slider');
       }
       
       function draw() {
         blendMode(BLEND);
         background(0);
         blendMode(ADD);
-        let t = frameCount/600;
+        let t = frameCount/slider.value();
         for (let i = n; i > 0; i--) {
           let size = radius + i * inter;
           let k = kMax * sqrt(i/n);
           let noisiness = maxNoise * noiseProg(i / n);
           fill(frameCount/2%255, 255, 255, 255);
-          drawingContext.shadowColor = color((frameCount/2+50)%255, 255, 255, 255);
           blob(size, width/2, height/2, k, t - i * step + 6, noisiness);
         }
       }
@@ -58,9 +79,9 @@
         beginShape();
         let angleStep = 360 / 8;
         for (let theta = 0; theta <= 360 + 2 * angleStep; theta += angleStep) {
-          let r1 = cos(theta)+1;
-          let r2 = sin(theta)+1;
-          let r = size + noise(k * r1,  k * r2, t) * noisiness;
+          let r1 = cos(theta) + 0.5;
+          let r2 = sin(theta) + 0.5;
+          let r = size + noise(k * r1,  k * r2, t) * noisiness * slider.value() / 1000;
           let x = xCenter + r * cos(theta);
           let y = yCenter + r * sin(theta);
           curveVertex(x, y);
@@ -81,5 +102,9 @@
       }
       
     </script>
+    <div id="controls">
+      <input id="slider" type="range" min="200" max="3000" value="50" />
+      <label for="slider">Slider</label>
+    </div>
   </body>
 </html>
