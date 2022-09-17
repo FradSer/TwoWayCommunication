@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		52107FA428D599A000964C67 /* blob.html in Resources */ = {isa = PBXBuildFile; fileRef = 52107FA328D599A000964C67 /* blob.html */; };
 		52107FA528D599A000964C67 /* blob.html in Resources */ = {isa = PBXBuildFile; fileRef = 52107FA328D599A000964C67 /* blob.html */; };
-		52107FA728D599A900964C67 /* p5.js in Resources */ = {isa = PBXBuildFile; fileRef = 52107FA628D599A900964C67 /* p5.js */; };
-		52107FA828D599A900964C67 /* p5.js in Resources */ = {isa = PBXBuildFile; fileRef = 52107FA628D599A900964C67 /* p5.js */; };
 		CB2FC58128D453000056BC5F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FC58028D453000056BC5F /* Tests_iOS.swift */; };
 		CB2FC58328D453000056BC5F /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FC58228D453000056BC5F /* Tests_iOSLaunchTests.swift */; };
 		CB2FC58D28D453000056BC5F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FC58C28D453000056BC5F /* Tests_macOS.swift */; };
@@ -46,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		52107FA328D599A000964C67 /* blob.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = blob.html; sourceTree = "<group>"; };
-		52107FA628D599A900964C67 /* p5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = p5.js; sourceTree = "<group>"; };
 		CB2FC56828D452FE0056BC5F /* TwoWayCommunicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWayCommunicationApp.swift; sourceTree = "<group>"; };
 		CB2FC56928D452FE0056BC5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB2FC56A28D453000056BC5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +112,6 @@
 				CB2FC56928D452FE0056BC5F /* ContentView.swift */,
 				CB73BDD928D45BB40000CBD7 /* WebView.swift */,
 				52107FA328D599A000964C67 /* blob.html */,
-				52107FA628D599A900964C67 /* p5.js */,
 				CB73BDD628D45B000000CBD7 /* index.html */,
 				CB2FC56A28D453000056BC5F /* Assets.xcassets */,
 			);
@@ -287,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2FC59428D453000056BC5F /* Assets.xcassets in Resources */,
-				52107FA728D599A900964C67 /* p5.js in Resources */,
 				CB73BDD728D45B000000CBD7 /* index.html in Resources */,
 				52107FA428D599A000964C67 /* blob.html in Resources */,
 			);
@@ -298,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2FC59528D453000056BC5F /* Assets.xcassets in Resources */,
-				52107FA828D599A900964C67 /* p5.js in Resources */,
 				CB73BDD828D45B000000CBD7 /* index.html in Resources */,
 				52107FA528D599A000964C67 /* blob.html in Resources */,
 			);
