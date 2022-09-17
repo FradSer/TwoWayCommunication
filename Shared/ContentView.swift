@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     VStack {
-      WebView(file: "index")
+      WebView(file: "blob")
     }
     .background(Color.white)
   }
